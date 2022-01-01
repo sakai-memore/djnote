@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <title>{{APP_NAME}}</title>
+  
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" id="ref-css">
+  <link href="{% static 'css/simple-sidebar.css' %}" rel="stylesheet">
+  <!-- Bootstrap Font Icon CSS -->
+  <link rel="stylesheet" href="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}">
+
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+
+    {% block _sidemenu %}{% endblock _sidemenu%}
+    
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      {% block _navi %}{% endblock _navi %}
+      
+      <!-- body -->
+      {% block body %}
+      {% endblock %}
+      
+      {% block _footer %}{% endblock _footer %}
+    </div>
+    <!-- /#page-content-wrapper -->
+    
+  </div>
+  <!-- /#wrapper -->    
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+  
+</body>
+
+</html>

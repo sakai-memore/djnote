@@ -1,0 +1,25 @@
+{% extends "layouts/_layout.hbs" %}
+
+{% block _footer %}
+{% include "layouts/_footer.hbs" %}
+{% endblock _footer %}
+
+{% block _navi %}
+{% include "layouts/_navi.hbs" %}
+{% endblock _navi %}
+
+{% block _sidemenu %}
+{% include "layouts/_sidemenu.hbs" %}
+{% endblock _sidemenu %}
+
+{% block body %}
+    <h1 class="bg-primary text-white ps-2">{{header}}</h1>
+    <div class="continer py-2">
+        <h2 class="mb-3">{{title}}</h2>
+        <div class="alert alert-primary">
+            {{msg}}
+        </div>
+    </div>
+{% endblock body %}
+
+

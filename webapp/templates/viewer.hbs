@@ -1,0 +1,23 @@
+{% load static %}
+
+<!-- styles -->
+<style>
+</style>
+
+<!-- insert body content -->
+<!-- <template> -->
+    <div class="container-fluid">
+      <!-- my content -->
+      <h1>{{title}}</h1>
+      <p>ID : {{SESSUUID}}</p>
+
+      <h2>viewer area</h2>
+      <div class="" id="canvas"></div>
+      <!-- my content -->
+    </div>
+<!-- </template> -->
+
+
+<!-- scripts -->
+<script src="{% static 'vendor/bpmn-js/dist/bpmn-viewer.development.js' %}"></script>
+<script src="{% static 'scripts/viewer.js' %}"></script>
