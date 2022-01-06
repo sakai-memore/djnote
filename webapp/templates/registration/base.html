@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-language" content="ja">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    {% block meta_tag %}{% endblock %}
+    {% block css %}{% endblock %}
+    <title>
+        {% block title %}BPMN{% endblock %}
+    </title>
+</head>
+<body>
+    <div class="ui container" style="min-height:100vh;">
+        {% block body %}
+        {% endblock body %}
+    </div>
+    {% block js %}{% endblock %}
+</body>

@@ -1,0 +1,23 @@
+{% extends 'registration/base.html' %}
+{% block title %}Sign up  - {{ block.super }}{% endblock %}
+{% block body %}
+<div class="ui grid stackable">
+    <div class="eleven wide column">
+        <div class="ui breadcrumb">
+            <a href="{% url 'home' %}" class="section">Home</a>
+            <i class="right angle icon divider"></i>
+            <a class="active section">Create user</a>
+        </div>
+        <div class="ui segment">
+            <div class="content">
+                <div class="header"><h3>Create user</h3></div>
+                <form class="ui form" action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_table}}
+                    <button class="ui orange button" name="next" value="confirm" type="submit">confirm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

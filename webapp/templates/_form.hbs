@@ -13,7 +13,9 @@
 {% endblock _sidemenu %}
 
 {% block body %}
-{% include "bpmn/viewer.hbs" %}
+{% load crispy_forms_tags %}
+{% csrf_token %}
+{% crispy form %}
 {% endblock body %}
 
 

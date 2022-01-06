@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
-import dynaconf
+## import dynaconf  # - [ ] FIXME: can not use 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,12 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'hello',
-    'home',
-    'viewer',
-    'modeler',
-    'settings',
-    'users',
+    'crispy_forms',
+    'rest_framework',
+    ##
+    'hello.apps.HelloConfig',
+    'home.apps.HomeConfig',
+    'bpmn.apps.BpmnConfig',
+    'appsettings.apps.AppsettingsConfig',
+    'accounts.apps.AccountsConfig',
     'commands',
 ]
 
@@ -90,7 +92,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -129,6 +130,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+MEDIA_URL = 'media/'
+MEDIA_DIR = 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_DIR)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -136,7 +140,17 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+## Additional settings
+
+APPEND_SLASH = True
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
+
+# CRISPY_TEMPLATE_PACK = 'uni_form'
+
+## Logging setting
 log_level = 'DEBUG' if DEBUG else 'INFO'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -161,6 +175,11 @@ LOGGING = {
         'level': log_level,
     },
 }
+
+
+## Custom config
+PROJECT_NAME = 'BPMN'
+APP_NAME = 'Trust by Design Support'
 
 ## DYNACONF
 # settings = dynaconf.DjangoDynaconf(__name__)

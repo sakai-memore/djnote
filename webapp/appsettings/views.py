@@ -1,22 +1,22 @@
 from django.views.generic import TemplateView
-from django.conf import settings
+from shared.services import uuid4_serv
 
-
-### Template View
 class CView(TemplateView):
-    """ Home View Class """
-    TEMPLATE = '_home.hbs'
+    """ settings View Class """
     ## template 
+    TEMPLATE = '_appsettings.hbs'
     template_name = TEMPLATE
     ## context
     def get_context_data(self, **kwargs):
         context = super(CView, self).get_context_data(**kwargs)
+        ## get data with service
+        uuid_str = uuid4_serv.service()
         dict_cxt = {
-            "title": "BPM Modeling and Analysis",
-            "APP_NAME": settings.APP_NAME,
+            "title": "BPMN Application Settings",
+            "SESSUUID": uuid_str,
         }
         context.update(dict_cxt)
         return context
-        
 
+## root function 
 root = CView.as_view()
