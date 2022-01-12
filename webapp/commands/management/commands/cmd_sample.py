@@ -1,6 +1,5 @@
 from django.core.management.base import BaseCommand
 import django
-import 
 
 class Command(BaseCommand):
     help = 'Get started on manage.py command'

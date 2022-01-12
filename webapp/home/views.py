@@ -17,6 +17,5 @@ class CView(TemplateView):
         }
         context.update(dict_cxt)
         return context
-        
 
 root = CView.as_view()

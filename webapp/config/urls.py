@@ -25,4 +25,5 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('bpmn/', include('bpmn.urls')),
     path('appsettings/', include('appsettings.urls')),
+    path('api/', include('api.urls')),
 ]

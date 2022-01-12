@@ -1,0 +1,6 @@
+{
+  "1": "{'name': 'pickledb', 'format': 'json'}",
+  "3": "{\"name\": \"pickledb\", \"format\": \"json\"}",
+  "4": "{\"name\": \"pickledb\", \"format\": \"json\"}",
+  "1234": "{\"name\": \"pickledb\", \"format\": \"json\"}"
+}
