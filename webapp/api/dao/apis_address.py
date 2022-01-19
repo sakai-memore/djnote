@@ -5,9 +5,10 @@ from shared.dataobjects import address as dao
 
 class AddressFilter(filters.FilterSet):
     """ Address filter class """
-    # 
+    
     class Meta:
         model = dao.AddressModel
+        fields = ['address_id','address','address2','district','city_id','postal_code','phone','last_update']
 
 class AddressApiViewSet(viewsets.ModelViewSet):
     """ Address api view """
@@ -16,4 +17,5 @@ class AddressApiViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = AddressFilter
 
-root = AddressApiViewSet.as_view()
+list_post = AddressApiViewSet.as_view({'get': 'list', 'post': 'create'})
+get_put_delete = AddressApiViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'})

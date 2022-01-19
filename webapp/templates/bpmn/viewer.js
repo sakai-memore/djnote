@@ -1,10 +1,12 @@
+{% load static %}
+
 function fetchDiagram(url) {
     return fetch(url).then(response => response.text());
 }
 
 async function run(){
     // the diagram you are going to display
-    const url = 'bpmn-sample/sample.bpmn';
+    const url = "{% static 'bpmn-sample/sample.bpmn' %}";
     // const bpmnXML = url;
     const bpmnXML = await fetchDiagram(url);
   

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'commands',
     'rest_framework',
+    'django_filters',
     'drf_yasg',
     'crispy_forms',
     ##
