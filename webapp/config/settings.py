@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
-## import dynaconf  # - [ ] FIXME: can not use 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     'bpmn.apps.BpmnConfig',
     'appsettings.apps.AppsettingsConfig',
     'api.apps.ApiConfig',
+    'shared.apps.SharedConfig',
 ]
 
 MIDDLEWARE = [
@@ -183,6 +183,9 @@ LOGGING = {
 ## Custom config
 PROJECT_NAME = 'BPMN'
 APP_NAME = 'Trust by Design Support'
+XML_DIR = 'xml'
+XLS_DIR = 'xlsx'
+JSON_DIR = 'json'
 
 ## DYNACONF
 # settings = dynaconf.DjangoDynaconf(__name__)

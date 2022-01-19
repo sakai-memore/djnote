@@ -14,7 +14,7 @@ if __name__ == "__main__":
         format='%(asctime)s [%(levelname)s] - %(message)s'
     )
     logger = logging.getLogger(__name__)
-    
+    #
     ## debug
     logger.debug(f'ret="{service()}"')
 

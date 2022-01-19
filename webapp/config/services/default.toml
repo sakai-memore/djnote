@@ -1,0 +1,4 @@
+PICKLE_FILE_NAME = "pickle.json"
+TINY_FILE_NAME = "tiny.json"
+SETTINGS_TBL_NAME = "SETTINGS"
+XML_DIR = "xml"

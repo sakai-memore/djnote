@@ -13,8 +13,14 @@ class Service():
 
     def get(self, key: str):
         if key in self.db.getall():
-            ret_str = self.db.get(key)
-            obj = json.loads(ret_str.replace("'",'"'))
+            ret = self.db.get(key)
+            if type(ret) == 'dict':
+                obj = ret
+            elif type(ret) == 'string':
+                obj = json.loads(ret.replace("'",'"'))
+            else:
+                obj = ret
+            #
             return obj
         else:
             return {"message": key + " not in json db"}
@@ -32,11 +38,15 @@ if __name__ == "__main__":
     ##
     ## initialize
     media_root = 'media'
-    json_path = Path(media_root,'data','pickle.json')
+    json_path = Path(media_root,'json','pickle.json')
     service = Service(json_path)
     ## debug
     logger.debug(f'file="{json_path}"')
     logger.debug( f'ret={service.get("1")}' )
     logger.debug( f'ret={service.get("1234")}' )
     logger.debug( f'ret={service.get("Hello")}' )
-
+    ##
+    json_path2 = Path(media_root, 'json', 'tiny.json')
+    service2 = Service(json_path2)
+    logger.debug(f'ret={service2.get("users")}')
+    logger.debug(f'ret["8"]={service2.get("users")["8"]}')

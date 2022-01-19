@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1g0cwob" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="8.8.3">
+  <bpmn:collaboration id="Collaboration_1g0kx5u">
+    <bpmn:participant id="Participant_0rqx9yk" name="entity service" processRef="Process_108ix6k" />
+    <bpmn:participant id="Participant_0876zgz" name="admin command" processRef="Process_1m9c3mv" />
+    <bpmn:messageFlow id="Flow_0snif70" sourceRef="Activity_040hq4v" targetRef="Activity_1vuapmj" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_108ix6k">
+    <bpmn:dataStoreReference id="DataStoreReference_11c4yfn" />
+    <bpmn:scriptTask id="Activity_1vuapmj" name="entity maintenance services">
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0joaqc1">
+        <bpmn:targetRef>DataStoreReference_11c4yfn</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:scriptTask>
+  </bpmn:process>
+  <bpmn:process id="Process_1m9c3mv">
+    <bpmn:scriptTask id="Activity_040hq4v" name="admin command (batch process)" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1g0kx5u">
+      <bpmndi:BPMNShape id="Participant_0rqx9yk_di" bpmnElement="Participant_0rqx9yk" isHorizontal="true">
+        <dc:Bounds x="140" y="80" width="600" height="170" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_11c4yfn_di" bpmnElement="DataStoreReference_11c4yfn">
+        <dc:Bounds x="599" y="140" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ap3kx4_di" bpmnElement="Activity_1vuapmj">
+        <dc:Bounds x="434" y="130" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0876zgz_di" bpmnElement="Participant_0876zgz" isHorizontal="true">
+        <dc:Bounds x="140" y="330" width="600" height="170" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_09re42g_di" bpmnElement="Activity_040hq4v">
+        <dc:Bounds x="434" y="380" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0joaqc1_di" bpmnElement="DataOutputAssociation_0joaqc1">
+        <di:waypoint x="534" y="170" />
+        <di:waypoint x="599" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0snif70_di" bpmnElement="Flow_0snif70">
+        <di:waypoint x="484" y="380" />
+        <di:waypoint x="484" y="210" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

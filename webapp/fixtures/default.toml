@@ -1,0 +1,15 @@
+FIXTURE_ROOT = "fixtures"
+BACKUP_DIR = "xlsx/backup"
+JSON_DIR = "json"
+JSON_EXT = ".json"
+XLSX_DIR = "xlsx"
+XLSX_EXT = ".xlsx"
+
+###
+[ACTORS]
+MODEL_NAME = "shared.ActorModel"
+ID_FIELD = "actor_id"
+
+[ADDRESS]
+MODEL_NAME = "shared.AddressModel"
+ID_FIELD = "address_id"

@@ -1,0 +1,1 @@
+[{"model": "shared.addressmodel", "pk": 1, "fields": {"address": "Chiyoda", "address2": "Kyobashi", "district": "Tokyo", "city_id": 1, "postal_code": "123-0012", "phone": "012-3456-7890"}}, {"model": "shared.addressmodel", "pk": 2, "fields": {"address": "Chiyoda", "address2": "Marunouchi", "district": "Tokyo", "city_id": 2, "postal_code": "120-0002", "phone": "012-3456-0987"}}]
