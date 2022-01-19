@@ -1,4 +1,4 @@
-# djnote
+# django-boilerplate
 ## overview
 - sample project for Django framework
 
