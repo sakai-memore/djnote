@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 class CView(TemplateView):
     """ viewer View Class """
     ## template 
-    TEMPLATE = '_viewer.hbs'
+    TEMPLATE = '_bpmn_viewer.hbs'
     template_name = TEMPLATE
     ## context
     def get_context_data(self, **kwargs):

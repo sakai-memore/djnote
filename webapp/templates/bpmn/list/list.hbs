@@ -1,0 +1,82 @@
+{% load static %}
+
+<!-- <template> -->
+  <!-- insert body content -->
+      <!-- my content -->
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h2>BPMN Files</h2>
+      </div>
+      <div class="col-sm text-right">
+        <span>
+          <a href="#"><i class="bi bi-arrow-repeat"></i></a>
+        </span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="bg-light col-sm">
+            <h4><b># <span id="id"></span></b></h4>
+          </div>
+          <div class="bg-light col-sm text-right">
+            <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</button>
+            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-clipboard-plus"></i> Copy</button>
+            <button type="button" class="btn btn-outline-info"><i class="bi bi-pencil-square"></i> Edit</button>
+            <button type="button" class="btn btn-primary"><i class="bi bi-plus-square"></i> New</button>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm">
+            <h5>
+              <label for="file_name" class="col-form-label">file name: </label>
+              <input id="file_name" name="file_name" type="text" size=48></input>
+            </h5>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm">
+            <label for="description" class="col-form-label"><b>description: </b></label>
+            <textarea id="description" name="description" rows=3 cols=64></textarea>
+          </div>
+          <div class="image col-sm">
+            <img id="bpmn_img"></img>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm text-top">
+            <label for="updated_by" class="col-form-label"><b>updated_by: </b></label>
+            <span id="updated_by"></span>
+          </div>
+          <div class="col-sm text-top">
+            <label for="update_at" class="col-form-label"><b>update_at: </b></label>
+            <span id="update_at"></span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+      <!-- <div class="alert alert-primary">
+        <span id="row-data"></span>
+      </div>
+      -->
+    </div>
+    
+    <hr>
+    <table id="tbl" class="table table-sm table-hover" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>file_name</th>
+          <th>business_pattern_id</th>
+          <th>business_pattern_name</th>
+          <th>description</th>
+          <th>updated_by</th>
+          <th>update_at</th>
+        </tr>
+      </thead>
+    </table>
+</div>
+   <!-- my content -->
+<!-- </template> -->

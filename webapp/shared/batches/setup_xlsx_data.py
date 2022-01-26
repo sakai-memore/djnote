@@ -87,7 +87,8 @@ if __name__ == "__main__":
     xlsx_dir = config.settings.XLSX_DIR
     json_dir = config.settings.JSON_DIR
     backup_dir = config.settings.BACKUP_DIR
-    table_name = "actors"
+    #table_name = "actors"
+    table_name = "xml_file"
     batch = Batch(media_root, xlsx_dir, json_dir, backup_dir)
     ret = batch.initialize_table(table_name)
     logger.debug(f'ret={ret}')

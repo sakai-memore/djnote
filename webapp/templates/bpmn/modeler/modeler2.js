@@ -10,13 +10,17 @@ async function run(){
     // const bpmnXML = url;
     const bpmnXML = await fetchDiagram(url);
   
-    console.log('Hello, BPMN.js modeler!');
+    console.log('Hello, BPMN.js modeler 2!');
     
     // BpmnJS is the BPMN modeler instance
     const modeler = new BpmnJS({
-        container: '#canvas',
+        container: '#js-canvas',
         keyboard: {
             bindTo: window
+        },
+        additionalModules: [PropertiesPanel, CamundaPropertiesProvider],
+        propertiesPanel: {
+            parent: "#properties-panel-parent"
         }
     });
 

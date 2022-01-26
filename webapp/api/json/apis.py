@@ -17,12 +17,12 @@ class TinydbListCreateView(views.APIView):
     json_path = Path(media_root, target_dir, DB_FILE_NAME)
     #
     def get(self, request, table_name, *args, **kwargs):
-        serv = tinydb_serv.Service(self.json_path, table_name)
+        serv = tinydb_serv.Service(self.json_path, table_name, 'id')
         obj = serv.list()
         return Response(obj)
 
     def post(self, request, table_name, *args, **kwargs):
-        serv = tinydb_serv.Service(self.json_path, table_name)
+        serv = tinydb_serv.Service(self.json_path, table_name, 'id')
         obj = serv.post(request.data)
         return Response(obj)
 
@@ -39,17 +39,17 @@ class TinydbRetrieveUpdateDestroyView(views.APIView):
     json_path = Path(media_root, target_dir, DB_FILE_NAME)
     #
     def get(self, request, table_name, key, *args, **kwargs):
-        serv = tinydb_serv.Service(self.json_path, table_name)
+        serv = tinydb_serv.Service(self.json_path, table_name, 'id')
         obj = serv.get(key)
         return Response(obj)
 
     def put(self, request, table_name, key, *args, **kwargs):
-        serv = tinydb_serv.Service(self.json_path, table_name)
+        serv = tinydb_serv.Service(self.json_path, table_name, 'id')
         obj = serv.put(request.data)
         return Response(obj)
 
     def delete(self, request, table_name, key, *args, **kwargs):
-        serv = tinydb_serv.Service(self.json_path, table_name)
+        serv = tinydb_serv.Service(self.json_path, table_name, 'id')
         obj = serv.delete(key)
         return Response(obj)
 

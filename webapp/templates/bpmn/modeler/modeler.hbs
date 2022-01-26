@@ -1,0 +1,34 @@
+{% load static %}
+
+<!-- <template> -->
+  <!-- insert body content -->
+      <!-- my content -->
+      <div class="container-fluid">
+        <div class="row bg-light">
+          <div class="col-2">
+            <p><h5>ID: {{id}}</h5></p>
+          </div>
+          <div class="col-sm">
+            <p><h5>File Name: <span style="color:blue">{{file_name}}</span></h5></p>
+          </div>
+        
+      </div>
+      <div class="container-fluid">
+        <div id="js-canvas" style="height:80vh"></div>
+      </div>  
+      <!-- my content -->
+{% include "bpmn/modeler/components/io-import-export.hbs" %}
+{% include "bpmn/modeler/components/io-alerts.hbs" %}
+{# {% include "bpmn/modeler/components/io-about.hbs" %} #}
+{% include "bpmn/modeler/components/io-editing-tools.hbs" %}
+{% include "bpmn/modeler/components/io-zoom-controls.hbs" %}
+{# {% include "bpmn/modeler/components/io-dialog about.hbs" %} #}
+{% include "bpmn/modeler/components/io-dialog import-warnings.hbs" %}
+{% include "bpmn/modeler/components/io-dialog keybindings-dialog.hbs" %}
+
+<!-- </template> -->
+
+<!-- scripts -->
+<link rel="stylesheet" href="{% static 'vendor/bpmn-js/dist/assets/diagram-js.css' %}" />
+<link rel="stylesheet" href="{% static 'vendor/bpmn-js/dist/assets/bpmn-font/css/bpmn.css' %}" />
+<script src="{% static 'vendor/bpmn-js/dist/bpmn-modeler.development.js' %}"></script>

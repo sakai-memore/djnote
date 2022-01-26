@@ -1,0 +1,28 @@
+{% extends "layouts/_layout.hbs" %}
+
+{% block css %}
+{% include "bpmn/modeler/modeler.css" %}
+{% endblock css %}
+
+{% block _footer %}
+{% include "partials/_footer.hbs" %}
+{% endblock _footer %}
+
+{% block _navi %}
+{% include "partials/_navi.hbs" %}
+{% endblock _navi %}
+
+{% block _sidemenu %}
+{% include "partials/_sidemenu.hbs" %}
+{% endblock _sidemenu %}
+
+{% block body %}
+{% include "bpmn/modeler/modeler.hbs" %}
+{# {% include "bpmn/modeler/modeler2.hbs" %} #}
+<script>
+{% include "bpmn/modeler/modeler.js" %}
+{# {% include "bpmn/modeler/modeler2.js" %} #}
+</script>
+{% endblock body %}
+
+

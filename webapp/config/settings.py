@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'hello.apps.HelloConfig',
     'home.apps.HomeConfig',
     'bpmn.apps.BpmnConfig',
+    'list_bpmn.apps.ListBpmnConfig',
     'appsettings.apps.AppsettingsConfig',
     'api.apps.ApiConfig',
     'shared.apps.SharedConfig',

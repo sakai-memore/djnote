@@ -14,10 +14,13 @@
   
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" id="ref-css">
   <link href="{% static 'css/simple-sidebar.css' %}" rel="stylesheet">
+  <!-- Google Font Icon CSS -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700" rel='stylesheet' type='text/css'>
   <!-- Bootstrap Font Icon CSS -->
   <link rel="stylesheet" href="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}">
   <link rel="icon" type="image/ico" href="{% static 'favicon.ico' %}">
-
+  {# css #}
+  {% block css %}{% endblock css %}
 </head>
 
 <body>
@@ -30,6 +33,7 @@
       {% block _navi %}{% endblock _navi %}
       
       <!-- body -->
+      {# body #}
       {% block body %}
       {% endblock %}
       
@@ -40,8 +44,12 @@
   </div>
   <!-- /#wrapper -->    
   <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'js/polyfills.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  {# javascript #}
+  {% block script %}{% endblock script %}
   
   <!-- Menu Toggle Script -->
   <script>
