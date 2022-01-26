@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sid-38422fae-e03e-43a3-bef4-bd33b32041b2" targetNamespace="http://bpmn.io/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="8.9.0">
+  <collaboration id="Collaboration_1my4ahy">
+    <participant id="Participant_0c35ncy" name="restraunt" processRef="Process_1xffdxx" />
+  </collaboration>
+  <process id="Process_1xffdxx">
+    <startEvent id="Event_05qewpp">
+      <outgoing>Flow_04fdeuh</outgoing>
+    </startEvent>
+    <sequenceFlow id="Flow_04fdeuh" sourceRef="Event_05qewpp" targetRef="Event_0faxowl" />
+    <sequenceFlow id="Flow_09seiz6" sourceRef="Event_0faxowl" targetRef="Activity_1xpf6rx" />
+    <intermediateCatchEvent id="Event_0faxowl">
+      <incoming>Flow_04fdeuh</incoming>
+      <outgoing>Flow_09seiz6</outgoing>
+      <messageEventDefinition id="MessageEventDefinition_0zojp5b" />
+    </intermediateCatchEvent>
+    <sequenceFlow id="Flow_0i3stgc" sourceRef="Activity_1xpf6rx" targetRef="Event_0086gow" />
+    <task id="Activity_1xpf6rx" name="cook a pizza">
+      <incoming>Flow_09seiz6</incoming>
+      <outgoing>Flow_0i3stgc</outgoing>
+    </task>
+    <sequenceFlow id="Flow_08en0ab" sourceRef="Event_0086gow" targetRef="Activity_1u4keul" />
+    <intermediateThrowEvent id="Event_0086gow">
+      <incoming>Flow_0i3stgc</incoming>
+      <outgoing>Flow_08en0ab</outgoing>
+      <signalEventDefinition id="SignalEventDefinition_1nmdvy5" />
+    </intermediateThrowEvent>
+    <task id="Activity_1u4keul" name="call a delivery driver">
+      <incoming>Flow_08en0ab</incoming>
+      <outgoing>Flow_09w5e6s</outgoing>
+    </task>
+    <endEvent id="Event_0iopkkl">
+      <incoming>Flow_09w5e6s</incoming>
+    </endEvent>
+    <sequenceFlow id="Flow_09w5e6s" sourceRef="Activity_1u4keul" targetRef="Event_0iopkkl" />
+  </process>
+  <bpmndi:BPMNDiagram id="BpmnDiagram_1">
+    <bpmndi:BPMNPlane id="BpmnPlane_1" bpmnElement="Collaboration_1my4ahy">
+      <bpmndi:BPMNShape id="Participant_0c35ncy_di" bpmnElement="Participant_0c35ncy" isHorizontal="true">
+        <omgdc:Bounds x="160" y="120" width="698" height="220" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_04fdeuh_di" bpmnElement="Flow_04fdeuh">
+        <omgdi:waypoint x="268" y="200" />
+        <omgdi:waypoint x="302" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09seiz6_di" bpmnElement="Flow_09seiz6">
+        <omgdi:waypoint x="338" y="200" />
+        <omgdi:waypoint x="370" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0i3stgc_di" bpmnElement="Flow_0i3stgc">
+        <omgdi:waypoint x="470" y="200" />
+        <omgdi:waypoint x="502" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08en0ab_di" bpmnElement="Flow_08en0ab">
+        <omgdi:waypoint x="538" y="200" />
+        <omgdi:waypoint x="570" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09w5e6s_di" bpmnElement="Flow_09w5e6s">
+        <omgdi:waypoint x="670" y="200" />
+        <omgdi:waypoint x="722" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_05qewpp_di" bpmnElement="Event_05qewpp">
+        <omgdc:Bounds x="232" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1u0c36r_di" bpmnElement="Event_0faxowl">
+        <omgdc:Bounds x="302" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1xpf6rx_di" bpmnElement="Activity_1xpf6rx">
+        <omgdc:Bounds x="370" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1rc5155_di" bpmnElement="Event_0086gow">
+        <omgdc:Bounds x="502" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1u4keul_di" bpmnElement="Activity_1u4keul">
+        <omgdc:Bounds x="570" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0iopkkl_di" bpmnElement="Event_0iopkkl">
+        <omgdc:Bounds x="722" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

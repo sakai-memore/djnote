@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sid-38422fae-e03e-43a3-bef4-bd33b32041b2" targetNamespace="http://bpmn.io/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="8.9.0">
+  <collaboration id="Collaboration_1my4ahy">
+    <participant id="Participant_0d2aszw" name="catoring driver" processRef="Process_1" />
+    <participant id="Participant_0ccx1c0" name="Customer" processRef="Process_0dg3bti" />
+    <participant id="Participant_0c35ncy" name="restraunt" processRef="Process_1xffdxx" />
+    <messageFlow id="Flow_1vbqg34" sourceRef="Task_1hcentk" targetRef="Activity_1duib41" />
+    <messageFlow id="Flow_0l2jvtp" sourceRef="Activity_1xpf6rx" targetRef="Task_1hcentk" />
+    <messageFlow id="Flow_13gob7y" sourceRef="Activity_03mfzjp" targetRef="Activity_1f005fg" />
+    <messageFlow id="Flow_10lu6eb" sourceRef="Activity_1f005fg" targetRef="Activity_1u4keul" />
+  </collaboration>
+  <process id="Process_1" isExecutable="false">
+    <task id="Task_1hcentk" name="convey a pizza" />
+    <task id="Activity_1f005fg" name="get money of service" />
+  </process>
+  <process id="Process_0dg3bti">
+    <task id="Activity_1duib41" name="receive a pizza">
+      <outgoing>Flow_0q6pd0h</outgoing>
+    </task>
+    <task id="Activity_03mfzjp" name="Choice payment">
+      <incoming>Flow_0q6pd0h</incoming>
+    </task>
+    <sequenceFlow id="Flow_0q6pd0h" sourceRef="Activity_1duib41" targetRef="Activity_03mfzjp" />
+  </process>
+  <process id="Process_1xffdxx">
+    <startEvent id="StartEvent_1y45yut" name="hunger noticed">
+      <outgoing>Flow_0musmcf</outgoing>
+    </startEvent>
+    <task id="Activity_1xpf6rx" name="provide a pizza with the contracted delivery service">
+      <incoming>Flow_0musmcf</incoming>
+    </task>
+    <sequenceFlow id="Flow_0musmcf" sourceRef="StartEvent_1y45yut" targetRef="Activity_1xpf6rx" />
+    <task id="Activity_1u4keul" name="get a receipt">
+      <outgoing>Flow_167yy30</outgoing>
+    </task>
+    <endEvent id="Event_0iopkkl">
+      <incoming>Flow_167yy30</incoming>
+    </endEvent>
+    <sequenceFlow id="Flow_167yy30" sourceRef="Activity_1u4keul" targetRef="Event_0iopkkl" />
+  </process>
+  <bpmndi:BPMNDiagram id="BpmnDiagram_1">
+    <bpmndi:BPMNPlane id="BpmnPlane_1" bpmnElement="Collaboration_1my4ahy">
+      <bpmndi:BPMNShape id="Participant_0ccx1c0_di" bpmnElement="Participant_0ccx1c0" isHorizontal="true">
+        <omgdc:Bounds x="160" y="540" width="600" height="160" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0q6pd0h_di" bpmnElement="Flow_0q6pd0h">
+        <omgdi:waypoint x="450" y="610" />
+        <omgdi:waypoint x="500" y="610" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_1duib41_di" bpmnElement="Activity_1duib41">
+        <omgdc:Bounds x="350" y="570" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_03mfzjp_di" bpmnElement="Activity_03mfzjp">
+        <omgdc:Bounds x="500" y="570" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0d2aszw_di" bpmnElement="Participant_0d2aszw" isHorizontal="true">
+        <omgdc:Bounds x="160" y="310" width="600" height="190" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1hcentk_di" bpmnElement="Task_1hcentk">
+        <omgdc:Bounds x="350" y="370" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1f005fg_di" bpmnElement="Activity_1f005fg">
+        <omgdc:Bounds x="500" y="370" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0c35ncy_di" bpmnElement="Participant_0c35ncy" isHorizontal="true">
+        <omgdc:Bounds x="160" y="120" width="600" height="160" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0musmcf_di" bpmnElement="Flow_0musmcf">
+        <omgdi:waypoint x="298" y="200" />
+        <omgdi:waypoint x="350" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_167yy30_di" bpmnElement="Flow_167yy30">
+        <omgdi:waypoint x="600" y="200" />
+        <omgdi:waypoint x="652" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_1y45yut_di" bpmnElement="StartEvent_1y45yut">
+        <omgdc:Bounds x="262" y="182" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="244" y="225" width="73" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1xpf6rx_di" bpmnElement="Activity_1xpf6rx">
+        <omgdc:Bounds x="350" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1u4keul_di" bpmnElement="Activity_1u4keul">
+        <omgdc:Bounds x="500" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0iopkkl_di" bpmnElement="Event_0iopkkl">
+        <omgdc:Bounds x="652" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1vbqg34_di" bpmnElement="Flow_1vbqg34">
+        <omgdi:waypoint x="400" y="450" />
+        <omgdi:waypoint x="400" y="570" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0l2jvtp_di" bpmnElement="Flow_0l2jvtp">
+        <omgdi:waypoint x="400" y="240" />
+        <omgdi:waypoint x="400" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13gob7y_di" bpmnElement="Flow_13gob7y">
+        <omgdi:waypoint x="550" y="570" />
+        <omgdi:waypoint x="550" y="450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10lu6eb_di" bpmnElement="Flow_10lu6eb">
+        <omgdi:waypoint x="550" y="370" />
+        <omgdi:waypoint x="550" y="240" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

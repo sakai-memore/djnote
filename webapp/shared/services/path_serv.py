@@ -3,17 +3,22 @@ from dataclasses import dataclass
 from pathlib import Path
 import string
 import random
+## 
+if __name__ == "__main__":
+    from config import settings
+else:
+    from django.conf import settings
 
 @dataclass
 class Service():
-    media_root: str
+    media_dir: str
     target_dir: str
     parent_path: Path
 
-    def __init__(self, media_root:str, target_dir:str):
-        self.media_root = media_root
+    def __init__(self, target_dir:str):
+        self.media_dir = settings.MEDIA_DIR
         self.target_dir = target_dir
-        self.parent_path = Path(self.media_root, self.target_dir)
+        self.parent_path = Path(self.media_dir, self.target_dir)
 
     def exist(self, file_name: str):
         target_path = Path(self.parent_path, file_name)
@@ -59,10 +64,9 @@ if __name__ == "__main__":
     logger = logging.getLogger(__name__)
     ##
     ## initialize
-    import config
-    media_root = 'media'
-    target_dir = config.settings.XML_DIR
-    service = Service(media_root, target_dir)
+    target_dir = settings.XML_DIR
+    logger.debug(f'target_dir={target_dir}')
+    service = Service(target_dir)
     file_name = "django-app-framework.bpmn"
     ## debug
     logger.debug( service.get_filename(file_name))

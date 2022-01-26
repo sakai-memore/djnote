@@ -11,11 +11,10 @@ from shared.services import path_serv as service
 ## Api View Class
 class FileNameView(views.APIView):
     """ API View to exist or not """
-    media_root: str = settings.MEDIA_ROOT
-    target_dir: str = settings.XML_DIR
+    target_dir: str = "images"
     #
     def get(self, request, file_name, *args, **kwargs):
-        serv = service.Service(self.media_root, self.target_dir)
+        serv = service.Service(self.target_dir)
         obj = serv.get_filename(file_name)
         return Response(obj)
 
@@ -26,13 +25,14 @@ get_filename = FileNameView.as_view()
 ## Api View Class
 class ExistFileView(views.APIView):
     """ API View to get file name """
-    media_root: str = settings.MEDIA_ROOT
-    target_dir: str = settings.XML_DIR
+    target_dir: str = "images"
     target_path: Path
     #
     def get(self, request, file_name, *args, **kwargs):
-        serv = service.Service(self.media_root, self.target_dir)
+        serv = service.Service(self.target_dir)
         exist = serv.exist(file_name)
+        print(self.target_dir)
+        print(file_name)
         return Response({'result': exist})
 
 ## public function

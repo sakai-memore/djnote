@@ -1,4 +1,4 @@
-MEDIA_ROOT = "media"
+MEDIA_DIR = "media"
 BACKUP_DIR = "xlsx/backup"
 XML_DIR = "xml"
 XML_EXT = ".xml"

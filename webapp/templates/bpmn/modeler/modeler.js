@@ -1,16 +1,15 @@
-{% load static %}
-
 function fetchDiagram(url) {
     return fetch(url).then(response => response.text());
 }
 
 async function run(){
     // the diagram you are going to display
-    const url = "{% static 'bpmn-sample/' %}" + "{{file_name}}";
+    const url = "../../media/xml/" + "{{file_name}}";
     // const bpmnXML = url;
     const bpmnXML = await fetchDiagram(url);
   
     console.log('Hello, BPMN.js modeler!');
+    console.log(url);
     
     // BpmnJS is the BPMN modeler instance
     const modeler = new BpmnJS({

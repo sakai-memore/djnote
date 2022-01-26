@@ -4,7 +4,6 @@
   background: #FAFAFA;
   border-radius: 2px;
   border: solid 1px #E0E0E0;
-  padding: 5px;
 }
 .cjs-powered-by,
 .bjs-powered-by {
@@ -33,12 +32,12 @@
   width: 15px;
 }
 .io-control-list .vr {
-  margin-right: 0;
+  margin-right: 10;
 }
 .io-control-list {
   list-style: none;
-  padding: 5px;
-  margin: 0;
+  padding: 2px;
+  margin: 2;
 }
 .io-control-list a,
 .io-control-list a:visited,
@@ -68,7 +67,7 @@
   display: inline-block;
 }
 .io-control-list.io-horizontal li + li {
-  margin-left: 10px;
+  margin-left: 2px;
 }
 .io-control-list.io-horizontal a {
   padding: 2px;
@@ -104,7 +103,8 @@ body.shown .io-about {
   bottom: 8px;
 }
 .io-import-export {
-  bottom: 10px;
+  left: 260px;
+  bottom: 80px;
 }
 .io-import {
   margin-right: 10px;
@@ -113,23 +113,23 @@ body.shown .io-about {
   width: auto;
   position: fixed;
   right: 10px;
-  bottom: 80px;
+  bottom: 120px;
 }
 .io-editing-tools {
   width: auto;
   position: fixed;
-  right: 5px;
-  top: 5px;
+  right: 2px;
+  top: 2px;
   display: none;
 }
 .io-editing-tools .io-control {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .io-editing-tools .io-control button {
   margin: 0;
 }
 .io-zoom-reset {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .io-import-export .inactive {
   opacity: 0.3;
