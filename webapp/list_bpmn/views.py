@@ -4,7 +4,7 @@ from django.conf import settings
 
 ### Template View
 class CView(TemplateView):
-    """ Home View Class """
+    """ BPMN List View Class """
     TEMPLATE = '_bpmn_list.hbs'
     ## template 
     template_name = TEMPLATE

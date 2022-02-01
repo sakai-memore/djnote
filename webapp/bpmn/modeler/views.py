@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 
-from shared.services import tinydb_serv as serv, config
+# from shared.services import tinydb_serv as serv, config
 
 class CView(TemplateView):
     """ modeler View Class """

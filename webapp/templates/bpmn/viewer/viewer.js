@@ -6,7 +6,7 @@ function fetchDiagram(url) {
 
 async function run(){
     // the diagram you are going to display
-    const url = "{% static 'bpmn-sample/sample.bpmn' %}";
+    const url = "../../media/xml/sample.bpmn";
     // const bpmnXML = url;
     const bpmnXML = await fetchDiagram(url);
   

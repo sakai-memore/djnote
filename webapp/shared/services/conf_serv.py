@@ -1,13 +1,14 @@
 from dataclasses import dataclass
 
-# from config.services import config
-import config
+from config.services import config
+# import config
 
 @dataclass
 class Service():
 
     def get(self, key: str):
-        if key == 'all':
+        key = key.upper()
+        if key == 'ALL':
             return config.settings
         elif key in config.settings.keys():
             return config.settings[key]

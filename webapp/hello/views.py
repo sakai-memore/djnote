@@ -7,17 +7,17 @@ from .forms import CForm
 ### view 
 class CView(View): ## View Class based
     def get(self, request, *arg, **kwargs):
-        TEMPLATE ='_hello.hbs' 
+        TEMPLATE ='_hello.hbs'
         context = {
             "title": "Django"
         }
         return render(request, TEMPLATE, context)
-        
+
 hello = CView.as_view()
 
 ### form view
 class FView(FormView): ## FormView Class based
-    TEMPLATE = '_form.hbs' 
+    TEMPLATE = '_form.hbs'
     form_class = CForm
     template_name = (TEMPLATE)
     success_url = '/home/'

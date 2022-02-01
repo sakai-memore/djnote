@@ -31,7 +31,6 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       {% block _navi %}{% endblock _navi %}
-      
       <!-- body -->
       {# body #}
       {% block body %}
@@ -44,8 +43,8 @@
   </div>
   <!-- /#wrapper -->    
   <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'js/polyfills.js' %}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="{% static 'js/polyfills.js' %}"></script>
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   {# javascript #}

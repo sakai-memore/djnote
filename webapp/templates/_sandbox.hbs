@@ -13,10 +13,11 @@
 {% endblock _sidemenu %}
 
 {% block body %}
-{% include "bpmn/modeler.hbs" %}
-<script>
-{% include "bpmn/modeler.js" %}
-</script>
+    <div class="continer py-2">
+        <div class="alert alert-primary">
+            {{json}}
+        </div>
+    </div>
 {% endblock body %}
 
 

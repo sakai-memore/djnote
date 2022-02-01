@@ -26,8 +26,7 @@ SECRET_KEY = 'django-insecure-4w!%u*pnh2-vejj%2$g3kv&=-7=dh!fa(4-&)nlhlz40gtp@3(
 DEBUG = True
 #DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     ##
     'accounts.apps.AccountsConfig',
     'hello.apps.HelloConfig',
+    'sandbox.apps.SandboxConfig',
     'home.apps.HomeConfig',
     'bpmn.apps.BpmnConfig',
     'list_bpmn.apps.ListBpmnConfig',
