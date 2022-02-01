@@ -1,9 +1,5 @@
 {% extends "layouts/_layout.hbs" %}
 
-{% block css %}
-{% include "bpmn/modeler/modeler.css" %}
-{% endblock css %}
-
 {% block _footer %}
 {% include "partials/_footer.hbs" %}
 {% endblock _footer %}
@@ -16,11 +12,23 @@
 {% include "partials/_sidemenu.hbs" %}
 {% endblock _sidemenu %}
 
+{# body #}
 {% block body %}
 {% include "bpmn/modeler/modeler.hbs" %}
+{% endblock body %}
+
+
+{# javascript #}
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 {% include "bpmn/modeler/modeler.js" %}
 </script>
-{% endblock body %}
+{% endblock script %}
 
+{# css #}
+{% block css %}
+<link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.6/sc-2.0.0/sl-1.3.0/datatables.min.css">
+{% include "bpmn/modeler/modeler.css" %}
+{% endblock css %}
 

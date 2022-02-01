@@ -8,11 +8,18 @@
 <!-- <template> -->
     <div class="container-fluid">
       <!-- my content -->
-      <h1>{{title}}</h1>
-      <p>ID : {{SESSUUID}}</p>
-
-      <h2>viewer area</h2>
-      <div class="" id="canvas"></div>
+      <div class="row bg-light">
+        <div class="col-2">
+          <p><h5>ID: {{id}}</h5></p>
+        </div>
+        <div class="col-sm">
+          <p><h5>File Name: <span style="color:blue">{{file_name}}</span></h5></p>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div id="js-canvas" style="height:80vh"></div>
+        <!-- <div id="js-canvas"></div> -->
+      </div>
       <!-- my content -->
     </div>
 <!-- </template> -->

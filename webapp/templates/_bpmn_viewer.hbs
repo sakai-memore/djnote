@@ -1,16 +1,8 @@
-{% extends "layouts/_layout.hbs" %}
+{% extends "layouts/_layout_window.hbs" %}
 
 {% block _footer %}
 {% include "partials/_footer.hbs" %}
 {% endblock _footer %}
-
-{% block _navi %}
-{% include "partials/_navi.hbs" %}
-{% endblock _navi %}
-
-{% block _sidemenu %}
-{% include "partials/_sidemenu.hbs" %}
-{% endblock _sidemenu %}
 
 {% block body %}
 {% include "bpmn/viewer/viewer.hbs" %}

@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('<int:pk>', views.root, name='modeler'),
-    path('new/', views.root, name='modeler_new'),
+    path('<str:pk>', views.root, name='modeler'),
+    path('copy/<str:pk>', views.root, name='modeler_copy'),
+    path('new/', views.new, name='modeler_new'),
 ]

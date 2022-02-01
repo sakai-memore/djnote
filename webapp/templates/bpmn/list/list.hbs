@@ -17,45 +17,47 @@
 
     <div class="card">
       <div class="card-body">
-        <div class="row">
-          <div class="bg-light col-sm">
-            <h4><b># <span id="id"></span></b></h4>
+        <form id="frm-card">
+          <div class="row">
+            <div class="bg-light col-sm">
+              <h4><b># <span id="id"></span></b></h4>
+            </div>
+            <div class="bg-light col-sm text-right">
+              <button type="button" id="btn_delete" class="btn btn-danger" jsaction="click:bpmnlist.deleteBpmnFile"><i class="bi bi-trash"></i> Delete</button>
+              <button type="button" id="btn_copy" class="btn btn-outline-secondary" jsaction="click:bpmnlist.copyBpmnFile"><i class="bi bi-clipboard-plus"></i> Copy</button>
+              <button type="button" id="btn_edit" class="btn btn-outline-info" jsaction="click:bpmnlist.editBpmnFile"><i class="bi bi-pencil-square"></i> Edit</button>
+              <button type="button" id="btn_new" class="btn btn-primary" jsaction="click:bpmnlist.createBpmnFile"><i class="bi bi-plus-square"></i> New</button>
+            </div>
           </div>
-          <div class="bg-light col-sm text-right">
-            <button type="button" id="btn_delete" class="btn btn-danger" jsaction="click:bpmnlist.deleteBpmnFile"><i class="bi bi-trash"></i> Delete</button>
-            <button type="button" id="btn_copy" class="btn btn-outline-secondary" jsaction="click:bpmnlist.copyBpmnFile"><i class="bi bi-clipboard-plus"></i> Copy</button>
-            <button type="button" id="btn_edit" class="btn btn-outline-info" jsaction="click:bpmnlist.editBpmnFile"><i class="bi bi-pencil-square"></i> Edit</button>
-            <button type="button" id="btn_new" class="btn btn-primary" jsaction="click:bpmnlist.createBpmnFile"><i class="bi bi-plus-square"></i> New</button>
+          <div class="form-group row">
+            <div class="col-sm">
+              <h5>
+                <label for="file_name" class="col-form-label">file name: </label>
+                <input id="file_name" name="file_name" type="text" size=48></input>
+              </h5>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm">
-            <h5>
-              <label for="file_name" class="col-form-label">file name: </label>
-              <input id="file_name" name="file_name" type="text" size=48></input>
-            </h5>
+          <div class="form-group row">
+            <div class="col-sm">
+              <label for="description" class="col-form-label"><b>description: </b></label>
+              <textarea id="description" name="description" rows=3 cols=64></textarea>
+            </div>
+            <div class="image col-sm">
+              <a id="bpmn_img_link" href="#"><img id="bpmn_img" width="75%" height="75%"></img></a>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm">
-            <label for="description" class="col-form-label"><b>description: </b></label>
-            <textarea id="description" name="description" rows=3 cols=64></textarea>
+          <div class="row">
+            <div class="col-sm text-top">
+              <label for="updated_by" class="col-form-label"><b>updated_by: </b></label>
+              <span id="updated_by"></span>
+            </div>
+            <div class="col-sm text-top">
+              <label for="update_at" class="col-form-label"><b>update_at: </b></label>
+              <span id="update_at"></span>
+            </div>
           </div>
-          <div class="image col-sm">
-            <img id="bpmn_img" width="75%" height="75%"></img>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm text-top">
-            <label for="updated_by" class="col-form-label"><b>updated_by: </b></label>
-            <span id="updated_by"></span>
-          </div>
-          <div class="col-sm text-top">
-            <label for="update_at" class="col-form-label"><b>update_at: </b></label>
-            <span id="update_at"></span>
-          </div>
-        </div>
-        <button type="button" id="btn_save" class="btn btn-primary" jsaction="click:bpmnlist.saveBpmnFile">Save</button>
+          <button type="button" id="btn_save" class="btn btn-primary" jsaction="click:bpmnlist.saveBpmnFile">Save</button>
+        </form>
       </div>
       <!-- <div class="alert alert-primary">
         <span id="row-data"></span>

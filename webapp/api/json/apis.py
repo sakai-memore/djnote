@@ -40,7 +40,7 @@ class TinydbRetrieveUpdateDestroyView(views.APIView):
     #
     def get(self, request, table_name, key, *args, **kwargs):
         serv = tinydb_serv.Service(self.json_path, table_name, 'id')
-        obj = serv.get(key)
+        obj = serv.get(str(key))
         return Response(obj)
 
     def put(self, request, table_name, key, *args, **kwargs):
@@ -50,7 +50,7 @@ class TinydbRetrieveUpdateDestroyView(views.APIView):
 
     def delete(self, request, table_name, key, *args, **kwargs):
         serv = tinydb_serv.Service(self.json_path, table_name, 'id')
-        obj = serv.delete(key)
+        obj = serv.delete(str(key))
         return Response(obj)
 
 ## public function

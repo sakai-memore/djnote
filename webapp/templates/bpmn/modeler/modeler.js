@@ -22,10 +22,15 @@ async function run(){
     // import a BPMN 2.0 diagram
     try{
         await modeler.importXML(bpmnXML);
-        // modeler.get('canvas').zoom('fit-viewport');
+        // modeler.get('js-canvas').zoom('fit-viewport');
     } catch(err) {
         console.error('something went wrong:', err);
     }
 }
 
 run();
+
+{% include "bpmn/modeler/components/io-import-export.js" %}
+{% include "bpmn/modeler/components/io-zoom-controls.js" %}
+{% include "bpmn/modeler/components/io-editing-tools.js" %}
+

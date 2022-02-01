@@ -181,6 +181,15 @@ LOGGING = {
     },
 }
 
+## rest framework setting
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+       # 'rest_framework.permission.IsAuthenticated',
+       'rest_framework.permissions.AllowAny',
+    ]
+
+}
+
 
 ## Custom config
 PROJECT_NAME = 'BPMN'

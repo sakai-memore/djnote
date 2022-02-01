@@ -153,26 +153,15 @@ function setCard(rowObj) {
      } else {
          img_name = 'e99d70d12692e73fcee73ad21cf30b1a.png';
      }
-     console.log(rowObj['file_name'].substr(0,3));
+     //console.log(rowObj['file_name'].substr(0,3));
      $('#bpmn_img').attr('src', '../media/images/' + img_name);
-     $('#edit_link').attr('href', '../bpmn/modeler/' + rowObj['id']);
+     $('#bpmn_img_link').attr('href', '../bpmn/viewer/' + rowObj['id']);
+     $('#bpmn_img_link').attr('target', '_blank');
+     $('#description').focus()
      
-     // const ret = await getImagePath(rowObj['file_name'] + '.svg');
      // $('#row-data').html(JSON.stringify(rowObj));
 };
 
-async function getImagePath(file_path) {
-    const URL = '../api/media/exist/';
-    console.log(URL + file_path);
-    return new Promise((resolve, reject) => {
-      $.ajax({
-        url: URL + file_path,
-        type: "GET",
-        async: true,
-        dataType: 'json',
-      })
-    })
-};
 
 const hashCode = str => {
   return str.split('').reduce((prevHash, currVal) =>
@@ -180,27 +169,49 @@ const hashCode = str => {
 }
 
 
-// button event
+// button event  
 const deleteBpmnFile = ()=>{
     console.log('click btn_delete');
+    const URL = "../api/json/tinydb/xml_file/" + $('#id').text();
+    let result_y = confirm('Delete a file');
+    
+    // do not implement : 403 Forbidden error
+    if (result_y) {
+      return axios
+        .delete(URL)
+        .then(function(res){
+          console.log(res);
+        })
+    } else {
+      console.log("Cancel!!!!!")
+      return ""
+    }
 }
 $("#btn_delete").bind("click", deleteBpmnFile)
 
 const copyBpmnFile = ()=>{
     console.log('click btn_copy');
+    let id = 1;
+    if ($('#id').text() !== "") {
+      id = $('#id').text();
+    }
+    location.href = "../bpmn/modeler/copy/" + id;
 }
 $("#btn_copy").bind("click", copyBpmnFile)
 
 const editBpmnFile = ()=>{
     console.log('click btn_edit');
-    console.log($('#id').val());
-    //location.href = "../bpmn/modeler/" + $('#id').val();
-    location.href = "../bpmn/modeler/" + 1;
+    let id = 1;
+    if ($('#id').text() !== "") {
+      id = $('#id').text();
+    }
+    location.href = "../bpmn/modeler/" + id;
 }
 $("#btn_edit").bind("click", editBpmnFile)
 
 const createBpmnFile = ()=>{
     console.log('click btn_new');
+    location.href = "../bpmn/modeler/new";
 }
 $("#btn_new").bind("click", createBpmnFile)
 
